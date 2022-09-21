@@ -1,0 +1,2200 @@
+apiVersion: orchestraml.com/models/v1alpha1
+kind: MLDependencyMap
+metadata:
+  environment: development
+features:
+- name: txn_id
+  datatype: int64
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: user_id
+  datatype: object
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: timestamp
+  datatype: int64
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: business_name
+  datatype: object
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: business_address
+  datatype: object
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: payment_method
+  datatype: object
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: purchase_amount
+  datatype: float64
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: class
+  datatype: int64
+  dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: txn_id
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: txn_id
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: user_id
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: user_id
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: timestamp
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: timestamp
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: business_name
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: business_name
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: business_address
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: business_address
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: payment_method
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: payment_method
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: purchase_amount
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: purchase_amount
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: class
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  createdUsing:
+    codeblock: write-cleandata-to-bigquery
+  passedFrom:
+    feature: class
+    datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: txn_id
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: user_id
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: timestamp
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_name
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_address
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: payment_method
+  datatype: object
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: purchase_amount
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: class
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: hour
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: minute
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: month
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: day
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: dayoftheweek
+  datatype: int64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: uescore
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: txn_online
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: txn_atm
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: txn_pos
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_embedding_1
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_embedding_2
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_embedding_3
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_embedding_4
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: business_embedding_5
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+- name: avg_5_ue
+  datatype: float64
+  dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  createdUsing:
+    codeblock: write-model-ready-bq
+dataSources:
+- name: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  dataprovider: orchestra-ml-prototype-prod
+  features:
+  - txn_id
+  - user_id
+  - timestamp
+  - business_name
+  - business_address
+  - payment_method
+  - purchase_amount
+  - class
+- name: bigquery://novuslabs-ml.cc_fraud.clean_data
+  dataprovider: novuslabs-ml.cc_fraud
+  features:
+  - txn_id
+  - user_id
+  - timestamp
+  - business_name
+  - business_address
+  - payment_method
+  - purchase_amount
+  - class
+- name: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  dataprovider: novuslabs-ml.cc_fraud
+  features:
+  - txn_id
+  - user_id
+  - timestamp
+  - business_name
+  - business_address
+  - payment_method
+  - purchase_amount
+  - class
+  - hour
+  - minute
+  - month
+  - day
+  - dayoftheweek
+  - uescore
+  - txn_online
+  - txn_atm
+  - txn_pos
+  - business_embedding_1
+  - business_embedding_2
+  - business_embedding_3
+  - business_embedding_4
+  - business_embedding_5
+  - avg_5_ue
+dataProviders:
+- name: orchestra-ml-prototype-prod
+  type: S3
+- name: novuslabs-ml.cc_fraud
+  type: bigquery
+modelRegistryProviders:
+- name: mlflow
+  type: mlflow
+modelRegistry:
+  name: http://34.127.114.212
+  provider: mlflow
+codeBlocks:
+- name: read-from-s3
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 69
+  end: 73
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: user_id
+    datatype: object
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: timestamp
+    datatype: int64
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_name
+    datatype: object
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_address
+    datatype: object
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: payment_method
+    datatype: object
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: purchase_amount
+    datatype: float64
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: class
+    datatype: int64
+    dataSource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: txn_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: user_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: timestamp
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: business_name
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: business_address
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: payment_method
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: purchase_amount
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: class
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: remove-na
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 75
+  end: 77
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: txn_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: user_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: timestamp
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: business_name
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: business_address
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: payment_method
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: purchase_amount
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-from-s3
+    passedFrom:
+      feature: class
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: txn_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: user_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: timestamp
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: business_name
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: business_address
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: payment_method
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: purchase_amount
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: class
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: write-cleandata-to-bigquery
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 54
+  end: 64
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: txn_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: user_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: timestamp
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: business_name
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: business_address
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: payment_method
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: purchase_amount
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: remove-na
+    passedFrom:
+      feature: class
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: txn_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: user_id
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: user_id
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: timestamp
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: timestamp
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_name
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: business_name
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: business_address
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: business_address
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: payment_method
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: payment_method
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: purchase_amount
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: purchase_amount
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+  - name: class
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+    createdUsing:
+      codeblock: write-cleandata-to-bigquery
+    passedFrom:
+      feature: class
+      datasource: s3://orchestra-ml-prototype-prod/feature-productionization/cc-fraud.csv
+- name: read-cleandata-from-bigquery
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 184
+  end: 202
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: user_id
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: timestamp
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: business_name
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: business_address
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: payment_method
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: purchase_amount
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  - name: class
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.clean_data
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+- name: transform-timestamp
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 86
+  end: 102
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-cleandata-from-bigquery
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+- name: uescore-calculation
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 206
+  end: 213
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: transform-timestamp
+      features:
+      - timestamp
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+      features:
+      - user_id
+      - business_address
+      - payment_method
+- name: one-hot-encoding-txn-type
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 111
+  end: 119
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: uescore-calculation
+      features:
+      - user_id
+      - business_address
+      - payment_method
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+      features:
+      - txn_type
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+      features:
+      - txn_type
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+      features:
+      - txn_type
+- name: business-embedding-computation
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 126
+  end: 160
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+      features:
+      - txn_type
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+      features:
+      - txn_type
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: one-hot-encoding-txn-type
+      features:
+      - txn_type
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+- name: avg_5_ue
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 222
+  end: 226
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: business-embedding-computation
+      features:
+      - business_name
+      - business_address
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: avg_5_ue
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+      features:
+      - user_id
+      - uescore
+- name: write-model-ready-bq
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 54
+  end: 64
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+  - name: avg_5_ue
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: avg_5_ue
+      features:
+      - user_id
+      - uescore
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: user_id
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: timestamp
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_name
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_address
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: payment_method
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: purchase_amount
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: class
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: hour
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: minute
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: month
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: day
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: uescore
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: txn_online
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: txn_atm
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: txn_pos
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+  - name: avg_5_ue
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+    createdUsing:
+      codeblock: write-model-ready-bq
+- name: read-model-ready-bq
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 237
+  end: 249
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: user_id
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: timestamp
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_name
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_address
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: payment_method
+    datatype: object
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: purchase_amount
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: class
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: hour
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: minute
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: month
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: day
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: uescore
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: txn_online
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: txn_atm
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: txn_pos
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  - name: avg_5_ue
+    datatype: float64
+    dataSource: bigquery://novuslabs-ml.cc_fraud.cc_fraud_model_ready
+  outputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: avg_5_ue
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+- name: cc-fraud-model-trainer
+  filename: /Users/shrinand/ws/go/src/gitlab.com/orchestraml/orchestralib/demos/orchestra-cc-fraud.py
+  start: 252
+  end: 282
+  inputFeatures:
+  - name: txn_id
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: user_id
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: timestamp
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_name
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_address
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: payment_method
+    datatype: object
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: purchase_amount
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: class
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: hour
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: minute
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: month
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: day
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: dayoftheweek
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: uescore
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: txn_online
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: txn_atm
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: txn_pos
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_1
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_2
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_3
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_4
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: business_embedding_5
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  - name: avg_5_ue
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-model-ready-bq
+  outputFeatures: []
+  outputModels:
+  - cc-fraud-model
+trainedModel:
+  name: cc-fraud-model
+  type: <class 'xgboost.sklearn.XGBClassifier'>
+  modelRegistry: http://mymlregistry.com
+  path: gs://orchestra-mlflow/0/9c34a755d34c4e3eb006bfb4064fd000/artifacts/cc-fraud-model
+  run: 9c34a755d34c4e3eb006bfb4064fd000
+  inputs:
+    features:
+    - hour
+    - minute
+    - month
+    - day
+    - dayoftheweek
+    - purchase_amount
+    - txn_online
+    - txn_atm
+    - txn_pos
+    - business_embedding_1
+    - business_embedding_2
+    - business_embedding_3
+    - business_embedding_4
+    - business_embedding_5
+    - uescore
+    - avg_5_ue
+    labels:
+    - class
+  createdUsing:
+    code:
+     float64
