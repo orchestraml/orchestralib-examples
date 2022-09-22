@@ -1,0 +1,236 @@
+## This is produced using the example code here:
+## https://colab.research.google.com/drive/1q2rzvYngxRPbhs750mDsdkKk9tPiQv1G?usp=sharing
+
+apiVersion: orchestraml.com/models/v1alpha1
+kind: MLDependencyMap
+metadata:
+  environment: development
+features:
+- name: Petrol_tax
+  datatype: float64
+  dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+- name: Average_income
+  datatype: int64
+  dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+- name: Paved_Highways
+  datatype: int64
+  dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+- name: Population_Driver_licence(%)
+  datatype: float64
+  dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+- name: Petrol_Consumption
+  datatype: int64
+  dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+dataSources:
+- name: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  dataprovider: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest
+  features:
+  - Petrol_tax
+  - Average_income
+  - Paved_Highways
+  - Population_Driver_licence(%)
+  - Petrol_Consumption
+dataProviders:
+- name: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest
+  type: Web Endpoint
+modelRegistryProviders:
+- name: mlflow
+  type: mlflow
+modelRegistry:
+  name:
+  provider: mlflow
+codeBlocks:
+- name: read-fuel-consumption
+  filename: <ipython-input-4-0c5de229b7a1>
+  start: 1
+  end: 6
+  inputFeatures:
+  - name: Petrol_tax
+    datatype: float64
+    dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Average_income
+    datatype: int64
+    dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Paved_Highways
+    datatype: int64
+    dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Population_Driver_licence(%)
+    datatype: float64
+    dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Petrol_Consumption
+    datatype: int64
+    dataSource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  outputFeatures:
+  - name: Petrol_tax
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Petrol_tax
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Average_income
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Average_income
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Paved_Highways
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Paved_Highways
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Population_Driver_licence(%)
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Population_Driver_licence(%)
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Petrol_Consumption
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Petrol_Consumption
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+- name: process-fuel-data
+  filename: <ipython-input-6-4e28a1c456ce>
+  start: 1
+  end: 8
+  inputFeatures:
+  - name: Petrol_tax
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Petrol_tax
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Average_income
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Average_income
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Paved_Highways
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Paved_Highways
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Population_Driver_licence(%)
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Population_Driver_licence(%)
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Petrol_Consumption
+    datatype: int64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: read-fuel-consumption
+    passedFrom:
+      feature: Petrol_Consumption
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  outputFeatures:
+  - name: Petrol_tax
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+    passedFrom:
+      feature: Petrol_tax
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Average_income
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+  - name: Paved_Highways
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+  - name: Population_Driver_licence(%)
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+    passedFrom:
+      feature: Population_Driver_licence(%)
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Petrol_Consumption
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+- name: train-model
+  filename: <ipython-input-8-69c6bb95ec36>
+  start: 1
+  end: 16
+  inputFeatures:
+  - name: Petrol_tax
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+    passedFrom:
+      feature: Petrol_tax
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Average_income
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+  - name: Paved_Highways
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+  - name: Population_Driver_licence(%)
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+    passedFrom:
+      feature: Population_Driver_licence(%)
+      datasource: https://raw.githubusercontent.com/orchestraml/orchestralib-examples/main/sampledata/random_forrest/petrol_consumption.csv
+  - name: Petrol_Consumption
+    datatype: float64
+    dataSource: in-memory
+    createdUsing:
+      codeblock: process-fuel-data
+  outputFeatures: []
+  outputModels:
+  - fuel-consumption-random-forest
+trainedModel:
+  name: fuel-consumption
+  type: <class 'sklearn.ensemble._forest.RandomForestRegressor'>
+  modelRegistry:
+  path:
+  run:
+  inputs:
+    features:
+    - Petrol_tax
+    - Average_income
+    - Paved_Highways
+    - Population_Driver_licence(%)
+    labels:
+    - Petrol_Consumption
+  createdUsing:
+    code: train-model
+
